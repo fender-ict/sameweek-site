@@ -208,7 +208,7 @@
 
   .ninety { padding-block: var(--sc-section) 0; }
   .ninety--num { padding-block: var(--sc-8) var(--sc-section); }
-  .ninety__num { position: relative; margin: 0 0 var(--sc-6); line-height: 1; }
+  .ninety__num { position: relative; margin: 0 0 var(--sc-6); line-height: 1; width: max-content; max-width: 100%; }
   .big {
     font-family: var(--sc-font-display); font-weight: 800;
     font-size: clamp(3.6rem, 13vw, 12rem);
@@ -366,6 +366,8 @@
     border-top: 1px solid var(--sc-hairline-strong); padding-top: var(--sc-5);
   }
   .small p { margin: 0; }
+
+  .small .build { grid-column: 1 / -1; font-size: 0.75rem; letter-spacing: 0.04em; opacity: 0.55; }
   .small .wordmark { color: var(--sc-ink); font-size: var(--sc-t-sm); }
   @media (max-width: 700px) { .small { grid-template-columns: 1fr; gap: var(--sc-4); } }
 
@@ -794,6 +796,7 @@
         <p><span class="wordmark"><span class="wordmark__same">same</span>week.ai</span><br>Van intake tot live in 5 werkdagen.<br>Een kleine ingreep. Een andere werkweek.</p>
         <p>Een initiatief van Fender ICT<br>Goudbloemlaan 12, 2970 Schilde<br>BTW BE0465.243.969</p>
         <p><a href="voorwaarden.html">Algemene voorwaarden</a>, met de definitie van "live".<br><a href="gegevens.html">Gegevensformulier</a>, in gewone woorden.</p>
+        <p class="build">build 79f2ab7 · 21/09/2026</p>
       </div>
     </div>
   </section>
