@@ -241,7 +241,7 @@ function runtime(host, actEl, renderer, draw, restP) {
       });
     }, { rootMargin: '20% 0px', threshold: 0 }).observe(host);
   } else { visible = true; raf = requestAnimationFrame(frame); }
-  return { redraw() { lastP = -1; if (!raf) raf = requestAnimationFrame(frame); } };
+  return { redraw() { lastP = -1; if (posterMode) frame(); else if (!raf) raf = requestAnimationFrame(frame); } };
 }
 
 function hero(host, actEl, tex) {
@@ -463,6 +463,16 @@ function blok(host, actEl, tex) {
 
   ground.material = new THREE.MeshStandardMaterial({ map: tex, bumpMap: tex, bumpScale: 0.15, color: V2 ? 0x6a3d16 : 0x4a4f58, roughness: 0.97 });
   ground.material.map = tex.clone(); ground.material.map.repeat.set(6, 6); ground.material.map.needsUpdate = true;
+  if (V2) {
+
+    const S = 256, ac = document.createElement('canvas'); ac.width = ac.height = S;
+    const ag = ac.getContext('2d'), rg = ag.createRadialGradient(S / 2, S / 2, S * 0.075, S / 2, S / 2, S * 0.225);
+    rg.addColorStop(0, '#fff'); rg.addColorStop(0.55, '#777'); rg.addColorStop(1, '#000');
+    ag.fillStyle = '#000'; ag.fillRect(0, 0, S, S); ag.fillStyle = rg; ag.fillRect(0, 0, S, S);
+    ground.material.alphaMap = new THREE.CanvasTexture(ac);
+    ground.material.transparent = true;
+    ground.material.depthWrite = false;
+  }
   const key = new THREE.DirectionalLight(V2 ? 0xffdcaa : 0xd9e4f4, V2 ? 4.4 : 4.0);
   if (V2) key.position.set(-8, 9, -9); else key.position.set(-8, 9, 1);
   key.castShadow = true;
