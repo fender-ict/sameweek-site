@@ -760,12 +760,12 @@
       <div class="c-2-12" data-sc-in data-sc-stagger="70">
         <p class="colophon__ask">Wat zou jij vrijdag graag kwijt zijn? Vertel ons welk werk elke week terugkomt en <a href="#proces">plan je kennismaking</a>. Een half uur, geen verkooppraatje.</p>
 
-        <form class="form" action="https://formsubmit.co/fenderict@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Kennismaking sameweek.ai">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://sameweek.ai/bedankt.html">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <form class="form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="3425cfd3-c807-4df4-b773-1aff9d4e64c7">
+          <input type="hidden" name="subject" value="Kennismaking sameweek.ai">
+          <input type="hidden" name="from_name" value="sameweek.ai">
+          <input type="hidden" name="redirect" value="https://sameweek.ai/bedankt.html">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <label>Welk proces kost je tijd?
             <textarea id="proces" name="proces" rows="3" required placeholder="Elke keer als er een aanvraag binnenkomt, moet ik…"></textarea>
           </label>
@@ -796,7 +796,7 @@
         <p><span class="wordmark"><span class="wordmark__same">same</span>week.ai</span><br>Van intake tot live in 5 werkdagen.<br>Een kleine ingreep. Een andere werkweek.</p>
         <p>Een initiatief van Fender ICT<br>Goudbloemlaan 12, 2970 Schilde<br>BTW BE0465.243.969</p>
         <p><a href="voorwaarden.html">Algemene voorwaarden</a>, met de definitie van "live".<br><a href="gegevens.html">Gegevensformulier</a>, in gewone woorden.</p>
-        <p class="build">build 960f1a8 · 21/09/2026</p>
+        <p class="build">build a932063 · 21/09/2026</p>
       </div>
     </div>
   </section>
@@ -942,13 +942,13 @@
       var fallen = false;
       function fallBack() { if (fallen) return; fallen = true; clearTimeout(slow); form.submit(); }
       var giveUp = setTimeout(fallBack, 25000);
-      var next = form.querySelector('[name="_next"]');
+      var next = form.querySelector('[name="redirect"]');
       var thanks = next ? new URL(next.value).pathname.replace(/^\//, '') : 'bedankt.html';
-      fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+      fetch(form.action, {
         method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)
       }).then(function (r) { return r.json(); }).then(function (d) {
         if (fallen) return;
-        if (String(d && d.success) !== 'true') throw new Error('formsubmit');
+        if (!d || d.success !== true) throw new Error('web3forms');
         clearTimeout(slow); clearTimeout(giveUp);
         formStatus.textContent = 'Verstuurd. Dank je.';
         window.location.href = thanks;
