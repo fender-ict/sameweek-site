@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bedankt · sameweek.ai</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23131417'/><rect x='7' y='21' width='18' height='3' fill='%23CD5C5C'/></svg>">
+<link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="scrollcraft.css">
+<script>document.documentElement.setAttribute('data-v', new URLSearchParams(location.search).get('v') === '1' ? '1' : '2');</script>
+<style>
+  :root {
+
+    --sc-t-base: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+    --sc-t-sm:   clamp(0.9375rem, 0.9rem + 0.25vw, 1.0625rem);
+    --sc-t-xs:   clamp(0.8125rem, 0.78rem + 0.15vw, 0.875rem);
+    --sc-canvas: #3a1907; --sc-surface: #4a2008; --sc-ink: #F7ECD9; --sc-ink-soft: #E3C79E;
+    --sc-accent: #E4B454; --sc-accent-text: #E4B454; --sc-accent-ink: #2a1206;
+    --sc-hairline: color-mix(in oklab, #F7ECD9 24%, transparent); --sc-hairline-strong: color-mix(in oklab, #F7ECD9 40%, transparent);
+    --sc-font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --sc-font-text: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: dark;
+  }
+  html[data-v="1"] {
+    --sc-canvas: #131417; --sc-surface: #1B1D23; --sc-ink: #F3F2EE; --sc-ink-soft: #B4B8C3;
+    --sc-accent: #CD5C5C; --sc-accent-text: #CD5C5C; --sc-accent-ink: #131417;
+    --sc-hairline: color-mix(in oklab, #F3F2EE 16%, transparent); --sc-hairline-strong: color-mix(in oklab, #F3F2EE 28%, transparent);
+  }
+  html, body { background: var(--sc-canvas); color: var(--sc-ink); }
+
+  body { position: relative; min-height: 100vh; background: transparent; }
+  html:not([data-v="1"]) body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 55% at 12% 4%, #a8702a 0%, #6a3a10 38%, transparent 72%),
+      radial-gradient(ellipse 50% 45% at 92% 96%, #6a3a10 0%, transparent 60%),
+      var(--sc-canvas);
+  }
+  a { color: inherit; }
+  .doc { min-height: 100svh; max-width: 46rem; margin-inline: auto; padding: var(--sc-8) var(--sc-gutter) var(--sc-10); display: grid; align-content: space-between; }
+  .doc__mark { font-family: var(--sc-font-display); font-weight: 700; letter-spacing: var(--sc-track-snug); text-decoration: none; }
+  .doc__mark span { color: #EC4A3C; }
+  .doc h1 { font-family: var(--sc-font-display); font-size: var(--sc-t-2xl); letter-spacing: var(--sc-track-snug); line-height: 1.05; margin: 0 0 var(--sc-4); text-wrap: balance; max-width: 18ch; }
+  .doc p { color: var(--sc-ink-soft); max-width: 44ch; margin: 0 0 var(--sc-4); text-wrap: pretty; }
+  .doc .back { font-weight: 500; }
+  .doc footer { font-size: var(--sc-t-xs); color: var(--sc-ink-soft); }
+  .one { color: #EC4A3C; }
+</style>
+</head>
+<body>
+<main class="doc">
+  <a class="doc__mark" href="index.html"><span>same</span>week.ai</a>
+  <div>
+    <h1>Dank je. Je bericht is binnen.</h1>
+    <p>Je hoort binnen één werkdag van ons.</p>
+    <p><a class="back" href="index.html">Terug naar de site</a></p>
+  </div>
+  <footer>Fender ICT · Goudbloemlaan 12, 2970 Schilde · BTW BE0465.243.969</footer>
+</main>
+</body>
+</html>

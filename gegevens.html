@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gegevensformulier · sameweek.ai</title>
+<meta name="description" content="Wat er met je gegevens gebeurt als sameweek.ai een proces automatiseert. Het gegevensformulier, in gewone woorden.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23131417'/><rect x='7' y='21' width='18' height='3' fill='%23CD5C5C'/></svg>">
+<link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="scrollcraft.css">
+<script>document.documentElement.setAttribute('data-v', new URLSearchParams(location.search).get('v') === '1' ? '1' : '2');</script>
+<style>
+  :root {
+
+    --sc-t-base: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+    --sc-t-sm:   clamp(0.9375rem, 0.9rem + 0.25vw, 1.0625rem);
+    --sc-t-xs:   clamp(0.8125rem, 0.78rem + 0.15vw, 0.875rem);
+    --sc-canvas: #3a1907; --sc-surface: #4a2008; --sc-ink: #F7ECD9; --sc-ink-soft: #E3C79E;
+    --sc-accent: #E4B454; --sc-accent-text: #E4B454; --sc-accent-ink: #2a1206;
+    --sc-hairline: color-mix(in oklab, #F7ECD9 24%, transparent); --sc-hairline-strong: color-mix(in oklab, #F7ECD9 40%, transparent);
+    --sc-font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --sc-font-text: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: dark;
+  }
+  html[data-v="1"] {
+    --sc-canvas: #131417; --sc-surface: #1B1D23; --sc-ink: #F3F2EE; --sc-ink-soft: #B4B8C3;
+    --sc-accent: #CD5C5C; --sc-accent-text: #CD5C5C; --sc-accent-ink: #131417;
+    --sc-hairline: color-mix(in oklab, #F3F2EE 16%, transparent); --sc-hairline-strong: color-mix(in oklab, #F3F2EE 28%, transparent);
+  }
+  html, body { background: var(--sc-canvas); color: var(--sc-ink); }
+
+  body { position: relative; min-height: 100vh; background: transparent; }
+  html:not([data-v="1"]) body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 55% at 12% 4%, #a8702a 0%, #6a3a10 38%, transparent 72%),
+      radial-gradient(ellipse 50% 45% at 92% 96%, #6a3a10 0%, transparent 60%),
+      var(--sc-canvas);
+  }
+  a { color: inherit; }
+  .doc { max-width: 72rem; margin-inline: auto; padding: var(--sc-8) var(--sc-gutter) var(--sc-10); }
+  .doc__mark { font-family: var(--sc-font-display); font-weight: 700; letter-spacing: var(--sc-track-snug); text-decoration: none; }
+  .doc__mark span { color: #EC4A3C; }
+  .doc h1 { font-family: var(--sc-font-display); font-weight: 500; font-size: var(--sc-t-2xl); letter-spacing: var(--sc-track-snug); line-height: 1.05; margin: var(--sc-8) 0 var(--sc-3); text-wrap: balance; }
+  .doc .meta { color: var(--sc-ink-soft); font-size: var(--sc-t-sm); margin: 0 0 var(--sc-8); }
+
+  .doc h2 { font-family: var(--sc-font-display); font-weight: 600; font-size: var(--sc-t-base); letter-spacing: var(--sc-track-snug); margin: var(--sc-8) 0 var(--sc-4); padding-top: var(--sc-6); border-top: 1px solid var(--sc-hairline); }
+  .doc p, .doc li { color: var(--sc-ink-soft); text-wrap: pretty; }
+  .doc p { margin: 0 0 var(--sc-4); }
+  .doc b { color: var(--sc-ink); font-weight: 600; }
+  .doc ul { padding-left: 1.4em; margin: 0 0 var(--sc-4); }
+  .doc li + li { margin-top: var(--sc-2); }
+  .doc .box { margin: 0 0 var(--sc-5); }
+  .doc .box p:last-child { margin-bottom: 0; }
+  .doc footer { margin-top: var(--sc-10); padding-top: var(--sc-5); border-top: 1px solid var(--sc-hairline-strong); font-size: var(--sc-t-xs); color: var(--sc-ink-soft); }
+  .doc footer p { margin: 0; }
+  .one { color: #EC4A3C; }
+</style>
+</head>
+<body>
+<main class="doc">
+  <a class="doc__mark" href="index.html"><span>same</span>week.ai</a>
+
+  <h1>Het gegevensformulier.</h1>
+  <p class="meta">Algemene versie, oktober 2026. Bij de intake vullen we dit document in voor jouw situatie, met de namen van jouw systemen erbij, en ondertekenen we het.</p>
+
+  <p>Een automatisering werkt met jouw gegevens. Dus hoor je vooraf te weten waar ze staan, wie erbij kan en wat er gebeurt als we ooit uit elkaar gaan. Dat staat hier, zonder kleine letters. Wat je hier leest, staat ook in de <a href="voorwaarden.html">algemene voorwaarden</a>, in artikel 6 en 7.</p>
+
+  <h2>Waar we bouwen</h2>
+  <div class="box">
+    <p>In een <b>werkruimte op jouw naam</b>, bij een leverancier van AI-modellen die jij kiest en rechtstreeks betaalt. Wij werken erin als beheerder, met een eigen login. Jij kan ons er op elk moment uitzetten.</p>
+  </div>
+
+  <h2>Wat naar die werkruimte gaat</h2>
+  <p>Twee dingen, en ze verschillen.</p>
+  <p><b>Wat de automatiseringen gebruiken</b>, bepalen wij samen op maandag en staat in het scopedocument. Enkel wat het proces nodig heeft: de mail die binnenkomt, het document dat verwerkt wordt, de regel uit de planning die in een ander systeem moet. Geen volledige exports van je klantenbestand, je boekhouding of je personeelsgegevens. Dat kunnen we hard maken, omdat de automatisering een eigen login heeft met enkel die rechten.</p>
+  <p><b>Wat jouw mensen er zelf in brengen</b> wanneer ze in de werkruimte werken, is hun keuze. Dat kunnen wij niet afdwingen, en dat beloven we dus ook niet. Wat we wél doen: welke bronnen de werkruimte kan aanspreken (mail, bestanden, agenda) zet de beheerder aan of uit, voor iedereen tegelijk. Wat niet gekoppeld is, kan niemand erin halen. En in de werkruimte zelf staat één korte huisregel over wat er niet in mag, die elke medewerker ziet. Wij schrijven ze mee, jij beslist wat erin staat.</p>
+
+  <h2>Wat in je eigen systemen blijft</h2>
+  <p>Alles. Je klantenbestand, je boekhouding, je lonen, je ERP en je mailboxen blijven waar ze staan. De automatisering leest wat ze nodig heeft via een <b>eigen login</b>, nooit die van een medewerker. Ze begint met alleen leesrechten. Wat ze daarna mag, staat in het scopedocument van maandag, per recht apart intrekbaar.</p>
+
+  <h2>Wie wat kan lezen</h2>
+  <ul>
+    <li><b>De beheerder</b> ziet alles wat er in de werkruimte gebeurt.</li>
+    <li><b>Wij</b> zien wat nodig is voor de opdracht, en na de overdracht niets meer. We bewaren geen kopieën, buiten wat de logboeken nodig hebben.</li>
+    <li><b>De leverancier</b> van de AI-modellen verwerkt je gegevens onder zijn eigen voorwaarden. We werken enkel met leveranciers die vastleggen dat ze jouw gegevens niet gebruiken om hun modellen te trainen. Waar de gegevens fysiek staan, zeggen we je bij de intake, per leverancier.</li>
+    <li><b>Je IT-partner en je DPO</b> mogen dit document en het scopedocument eventueel nalezen vóór er iets live gaat.</li>
+  </ul>
+
+  <h2>Wat naar buiten gaat</h2>
+  <p>Niets onder jouw naam zonder dat een mens bij jou op verzenden klikt. Mails naar klanten, financiële rapporten, publieke berichten en juridische documenten bereidt de automatisering voor; verzenden doet iemand van jou. Dat blijft zo, ook wanneer je na de livegang de controle op de andere stappen stap voor stap loslaat.</p>
+
+  <h2>Waar de logboeken staan</h2>
+  <p>Elke actie van de automatisering wordt gelogd, in jouw werkruimte en in jouw systemen. Jij kan ze inkijken wanneer je wil. Wij hebben geen logboek dat jij niet hebt.</p>
+
+  <h2>Als we uit elkaar gaan</h2>
+  <p>Alles blijft draaien. De werkruimte, de licenties, de automatiseringen en de bibliotheek van bouwstenen zijn van jou. Wij verliezen onze toegang en houden geen kopieën. Bij elk proces hoort een overdrachtsdocument zodat een medewerker het kan overnemen.</p>
+
+  <h2>Persoonsgegevens</h2>
+  <p>Persoonsgegevens verwerken we volgens de privacywetgeving. Waar dat nodig is, sluiten we een verwerkersovereenkomst met jou, en jij met de leverancier van de AI-modellen. Welke gegevens dat zijn en waarom, staat op het ingevulde gegevensformulier.</p>
+
+  <div class="box">
+    <p><b>Wat je bij de intake krijgt:</b> het gegevensformulier, ingevuld voor jouw proces en jouw systemen, met de naam van de leverancier, de plaats waar de gegevens staan, de rechten die de automatisering krijgt, welke bronnen gekoppeld zijn en de huisregel voor jouw mensen. Ondertekend door ons. Ondertekend door jou als je akkoord gaat.</p>
+  </div>
+
+  <footer>
+    <p>Fender ICT · Goudbloemlaan 12, 2970 Schilde · BTW BE0465.243.969</p>
+
+  </footer>
+</main>
+</body>
+</html>
