@@ -353,6 +353,10 @@
   .btn:active { transform: translateY(1px); }
   .btn:focus-visible { outline: 2px solid var(--sc-accent); outline-offset: 4px; }
   .form__note { font-size: var(--sc-t-xs); color: var(--sc-ink-soft); margin: 0; }
+
+  .btn[disabled] { opacity: 0.6; cursor: progress; }
+  .form__status { font-size: var(--sc-t-sm); color: var(--sc-ink); margin: 0; min-height: 1.62em; }
+  .form__status:empty { display: none; }
   @media (max-width: 600px) { .form__grid, .form__row { grid-template-columns: 1fr; } .btn { justify-self: start; } }
 
   .small {
@@ -780,6 +784,7 @@
           <div class="form__row">
             <button class="btn" type="submit">Plan je kennismaking</button>
           </div>
+          <p class="form__status" role="status" aria-live="polite"></p>
           <p class="form__note">Je aanvraag komt rechtstreeks bij ons terecht. Je hoort binnen één werkdag van ons.</p>
         </form>
       </div>
@@ -918,6 +923,35 @@
     }, { threshold: 0.2 }).observe(stage);
   }
 
+  var form = document.querySelector('.colophon .form');
+  if (form && window.fetch && window.FormData) {
+    var formBtn = form.querySelector('.btn');
+    var formStatus = form.querySelector('.form__status');
+    var formBusy = false;
+    form.addEventListener('submit', function (e) {
+      if (formBusy) { e.preventDefault(); return; }
+      e.preventDefault();
+      formBusy = true;
+      formBtn.disabled = true;
+      formBtn.textContent = 'Bezig met versturen…';
+      formStatus.textContent = 'Even geduld, je aanvraag is onderweg.';
+      var slow = setTimeout(function () { formStatus.textContent = 'Het duurt wat langer dan normaal. Nog even geduld.'; }, 7000);
+      var fallen = false;
+      function fallBack() { if (fallen) return; fallen = true; clearTimeout(slow); form.submit(); }
+      var giveUp = setTimeout(fallBack, 25000);
+      var next = form.querySelector('[name="_next"]');
+      var thanks = next ? new URL(next.value).pathname.replace(/^\//, '') : 'bedankt.html';
+      fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (fallen) return;
+        if (String(d && d.success) !== 'true') throw new Error('formsubmit');
+        clearTimeout(slow); clearTimeout(giveUp);
+        formStatus.textContent = 'Verstuurd. Dank je.';
+        window.location.href = thanks;
+      }).catch(fallBack);
+    });
+  }
 })();
 </script>
 </body>
