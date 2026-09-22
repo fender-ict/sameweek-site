@@ -3,7 +3,7 @@
 :root{
   --wit:#FFFFFF; --grijs:#F5F6F8; --lijn:#E3E6EA; --lijn-2:#C9CED5;
   --inkt:#0E1116; --inkt-2:#3F4650; --inkt-3:#7A828D;
-  --rood:#D42B2B; --rood-2:#B81F1F;
+  --rood:#CD5C5C; --rood-2:#AD4242;
   --kop:"Instrument Sans","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
   --tekst:"Inter","Segoe UI",system-ui,sans-serif;
 }
@@ -26,7 +26,7 @@ h1{font-family:var(--kop);font-weight:700;font-size:clamp(40px,7vw,68px);line-he
 .week div:last-child{border-right:0}
 .week b{display:block;font-family:var(--kop);font-weight:700;font-size:15px;letter-spacing:-0.01em}
 .week span{font-size:14px;color:var(--inkt-3)}
-.week div:last-child b,.week div:last-child span{color:var(--rood)}
+.week div:last-child b,.week div:last-child span{color:var(--rood-2)}
 .prijs{margin:40px 0 0;font-size:17px;color:var(--inkt-2);max-width:40em}
 .prijs b{color:var(--inkt);font-weight:600}
 .acties{margin:44px 0 0;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
