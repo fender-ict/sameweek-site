@@ -78,3 +78,6 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .doc .terug{display:inline-block;margin-top:32px;font-weight:600;text-decoration:none;border-bottom:2px solid var(--inkt)}
 .doc .terug:hover{color:var(--rood-2);border-color:var(--rood-2)}
 .build{opacity:.7}
+
+.doc{font-weight:600;color:#CD5C5C}
+a .doc,.doc a{color:#CD5C5C}
