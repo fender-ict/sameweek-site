@@ -79,5 +79,5 @@ footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .doc .terug:hover{color:var(--rood-2);border-color:var(--rood-2)}
 .build{opacity:.7}
 
-.doc{font-weight:600;color:#CD5C5C}
-a .doc,.doc a{color:#CD5C5C}
+span.doc{font-weight:600;color:var(--rood)}
+a span.doc,span.doc a{color:var(--rood)}
